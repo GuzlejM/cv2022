@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="h-full mx-40 my-10">
+  <div class="h-screen px-40 py-10">
     <!--actual component start-->
     <Socials />
     <ul class="flex justify-start items-center my-4">
@@ -18,21 +18,37 @@
       </div>
     </ul>
 
-    <div class="bg-white text-center h-max shadow-xl">
+    <div class="bg-white text-center h-max h-4/6 shadow-xl">
       <!-- 1st SLIDER -->
       <Jumbotron v-show="$store.state.activeTab === 0" class="flex h-full">
-        <div class="w-2/6 shadow-lg">
-          <img class="object-scale-down " src="../assets/logo.jpg" />
+        <div class="flex justify-center align-center w-2/6">
+          <img class="p-2 md:p-5" src="../assets/logo.jpg" />
         </div>
-
-        <div class="w-full bg-green-300">
-
-          <div class="p-4 border">
-            <h2 class="">DETAILY</h2>
-            <Socials>
-
-            </Socials>
+        <div class="bg-blue-500 flex w-4/6 justify-around items-center">
+          <div class="flex flex-col w-3/6">
+            <p class="leading-relaxed">MENO: Martin</p>
+            <p>Adresa: Moyzesova 5 Trencin 91101</p>
           </div>
+          <p class="leading-relaxed w-3/6">
+            <a
+              class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+              href="#"
+              role="button"
+              >LinkedIn</a
+            >
+            <a
+              class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+              href="#"
+              role="button"
+              >GitHub</a
+            >
+            <a
+              class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+              href="#"
+              role="button"
+              >Gmail</a
+            >
+          </p>
         </div>
       </Jumbotron>
       <Jumbotron v-show="$store.state.activeTab === 1" class="flex border">
