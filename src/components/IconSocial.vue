@@ -1,12 +1,12 @@
 <template lang="">
   <div>
-    <i class=""></i>
+    <i :class="customClass"></i>
   </div>
 </template>
 <script>
 export default {
   props: {
-        CameraName: {
+      customClass: {
       type: String,
       required: true,
       default: ''

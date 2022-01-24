@@ -1,8 +1,15 @@
 <template lang="">
   <div class="h-screen px-40 py-10">
+    <div class="flex justify-between">
+      <div>
+        <div class="flex">
+          <TypingAnimation />
+        </div>
+      </div>
+      <Socials />
+    </div>
     <!--actual component start-->
-    <Socials />
-    <ul class="flex justify-start items-center my-4">
+    <ul class="flex justify-start items-center py-4">
       <div v-for="(tab, index) in tabs" :key="index">
         <li
           class="cursor-pointer py-2 px-4 text-gray-500 border-b-8"
@@ -20,7 +27,7 @@
 
     <div class="bg-white text-center h-max h-4/6 shadow-xl">
       <!-- 1st SLIDER -->
-      <Jumbotron v-show="$store.state.activeTab === 0" class="flex h-full">
+      <Jumbotron v-show="$store.state.activeTab === 0">
         <div class="flex justify-center align-center w-2/6">
           <img class="p-2 md:p-5" src="../assets/logo.jpg" />
         </div>
@@ -52,6 +59,35 @@
         </div>
       </Jumbotron>
       <Jumbotron v-show="$store.state.activeTab === 1" class="flex border">
+        <div class="flex justify-center align-center w-2/6"></div>
+        <div class="bg-blue-500 flex w-4/6 justify-around items-center">
+          <div class="flex flex-col w-3/6">
+            <p class="leading-relaxed">MENO: Martin</p>
+            <p>Adresa: Moyzesova 5 Trencin 91101</p>
+          </div>
+          <p class="leading-relaxed w-3/6">
+            <a
+              class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+              href="#"
+              role="button"
+              >LinkedIn</a
+            >
+            <a
+              class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+              href="#"
+              role="button"
+              >GitHub</a
+            >
+            <a
+              class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+              href="#"
+              role="button"
+              >Gmail</a
+            >
+          </p>
+        </div>
+      </Jumbotron>
+      <Jumbotron v-show="$store.state.activeTab === 2">
         <div class="flex justify-center align-center w-2/6">
           <img class="p-2 md:p-5" src="../assets/logo.jpg" />
         </div>
@@ -82,7 +118,7 @@
           </p>
         </div>
       </Jumbotron>
-            <Jumbotron v-show="$store.state.activeTab === 2" class="flex border">
+      <Jumbotron v-show="$store.state.activeTab === 3" class="flex border">
         <div class="flex justify-center align-center w-2/6">
           <img class="p-2 md:p-5" src="../assets/logo.jpg" />
         </div>
@@ -113,41 +149,9 @@
           </p>
         </div>
       </Jumbotron>
-            <Jumbotron v-show="$store.state.activeTab === 3" class="flex border">
-        <div class="flex justify-center align-center w-2/6">
-          <img class="p-2 md:p-5" src="../assets/logo.jpg" />
-        </div>
-        <div class="bg-blue-500 flex w-4/6 justify-around items-center">
-          <div class="flex flex-col w-3/6">
-            <p class="leading-relaxed">MENO: Martin</p>
-            <p>Adresa: Moyzesova 5 Trencin 91101</p>
-          </div>
-          <p class="leading-relaxed w-3/6">
-            <a
-              class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
-              href="#"
-              role="button"
-              >LinkedIn</a
-            >
-            <a
-              class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
-              href="#"
-              role="button"
-              >GitHub</a
-            >
-            <a
-              class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
-              href="#"
-              role="button"
-              >Gmail</a
-            >
-          </p>
-        </div>
-      </Jumbotron>
-
     </div>
 
-    <ul class="flex justify-center items-center my-4">
+    <ul class="flex justify-center items-center py-4">
       <div v-for="(tab, index) in tabs" :key="index">
         <li
           class="cursor-pointer py-3 px-4 rounded transition"
@@ -186,10 +190,11 @@
 <script>
 import Jumbotron from "./Jumbotron.vue";
 import Socials from "./Socials.vue";
+import TypingAnimation from './TypingAnimation.vue'
 
 
 export default {
-  components: { Jumbotron, Socials },
+  components: { Jumbotron, Socials, TypingAnimation },
   data() {
     return {
       tabs: [

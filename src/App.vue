@@ -24,6 +24,6 @@ body {
 
 #app {
   height: 100%;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Questrial', sans-serif;
 }
 </style>
