@@ -41,7 +41,7 @@
         />
         <!-- PHOTO PART -->
 
-        <Photo class="p-4 z-20 w-2/6" />
+        <Photo class="p-4 z-20 w-max" />
         <!-- DETAILS -->
 
         <div class="flex flex-col justify-between h-full py-5 w-4/6 pr-2">
