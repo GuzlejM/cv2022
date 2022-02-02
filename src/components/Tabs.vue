@@ -9,7 +9,7 @@
       </div>
       <!--actual component start-->
       <ul class="flex justify-start items-center py-4">
-        <div v-for="(tab, index) in tabs" :key="index">target="_newtab"
+        <div v-for="(tab, index) in tabs" :key="index">
           <li
             class="cursor-pointer py-2 px-4 text-2xl hover:border-4 hover:border-black"
             @click="$store.state.activeTab = index"

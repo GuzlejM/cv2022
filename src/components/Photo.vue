@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <img
-      class="rounded-xl w-auto h-full border-8 border-white"
+      class="rounded-xl mx-auto w-auto h-full border-8 border-white"
       src="../assets/logo.jpg"
     />
   </div>
