@@ -1,11 +1,12 @@
 <template>
   <div class="container">
     <h1>
-      <span class="text-4xl">Martin Guzlej,</span><br />
+      <span class="drop-shadow-lg mb-3 text-4xl drop-shdw">Martin Guzlej,</span
+      ><br />
       a
       <span
         :class="typeValue.length === 0 ? 'p-0' : 'bg-white p-1 rounded-lg'"
-        class="text-2xl"
+        class="text-black text-2xl"
         >{{ typeValue }}</span
       >
       <span class="cursor" :class="{ typing: typeStatus }"></span>
@@ -21,7 +22,7 @@ export default {
     return {
       typeValue: "Vue.js ",
       typeStatus: false,
-      typeArray: ["Front-End", "Node.js", "Javascript", "Vue.js", "Full-Stack"],
+      typeArray: ["Front-End", "Node.js", "Javascript", "Vue.js"],
       typingSpeed: 100,
       erasingSpeed: 100,
       newTextDelay: 2000,
@@ -67,3 +68,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.drop-shdw {
+  filter: drop-shadow(4px 4px 3px black);
+}
+</style>

@@ -3,7 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontSize: {
-      '2xl': ['24px', {
+      '2xl': ['20px', {
         letterSpacing: '-0.01em',
       }],
       // Or with a default line-height as well
