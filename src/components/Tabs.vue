@@ -34,40 +34,41 @@
 
     <div class="bg-white h-max h-4/6 shadow-xl rounded-xl">
       <!-- 1st SLIDER -->
+
       <Jumbotron class="relative" v-show="$store.state.activeTab === 0">
         <div
           class="z-10 rounded-b-xl bottom-0 absolute h-1/6 w-full bg-blue-500"
-        ></div>
+        />
         <!-- PHOTO PART -->
-        <div class="p-4 z-20">
-          <img
-            class="rounded-xl w-full h-full border-8 border-white"
-            src="../assets/logo.jpg"
-          />
-        </div>
+
+        <Photo class="p-4 z-20" />
         <!-- DETAILS -->
+
         <div class="flex flex-col justify-between h-full py-5 w-4/6 pr-2">
           <div class="leading-none text-start h-4/6 w-full">
-            <div class="w-max">
-              <h2 class="leading-none text-4xl">Martin Guzlej</h2>
-              <h2 class="text-3xl">Vue.js Front-End Developer</h2>
-              <div class="h-0.5 bg-black rounded-xl mb-5"></div>
-            </div>
+            
+            <ProfileHeader class="w-max" name="Martin Guzlej" title="Vue.js Front-End Developer"/>
+
             <div class="flex flex-col w-3/6 text-2xl">
-              <p>
-                <span class="font-bold">Adresa: </span> Trenčín, 911 01 Slovakia
-              </p>
-              <p>
-                <span class="font-bold">E-mail: </span> martin.guzlej@gmail.com
-              </p>
-              <a href="https://github.com/GuzlejM"
-                ><span class="font-bold">Github: </span> <span class="underline hover:opacity-75">github.com/GuzlejM</span></a
-              >
-              <a href="https://uk.linkedin.com/in/martin-guzlej-12359119b"
-                ><span class="font-bold">LinkedIn: </span>
-                <span class="underline hover:opacity-75">uk.linkedin.com/in/martin-guzlej</span></a
-              >
-              <p><span class="font-bold">Tel. c. :</span> +421/911 34 65 98</p>
+              <DetailsField
+                label="Adresa: "
+                textField="Trencin 911 01, Slovakia"
+              />
+              <DetailsField
+                label="E-mail: "
+                textField="martin.guzlej@gmail.com"
+              />
+              <DetailsLink
+                url="https://github.com/GuzlejM"
+                label="Github: "
+                textField="github.com/GuzlejM"
+              />
+              <DetailsLink
+                url="https://uk.linkedin.com/in/martin-guzlej-12359119b"
+                label="LinkedIn: "
+                textField="uk.linkedin.com/in/martin-guzlej"
+              />
+              <DetailsField label="Tel. c. : " textField="+421/911 34 65 98" />
             </div>
           </div>
           <!-- DETAILS -->
@@ -183,34 +184,28 @@
         </li>
       </div>
     </ul>
-
-    <!-- <div class="flex gap-4 justify-center border-t p-4">
-      <button
-        class="py-2 px-4 border rounded-md border-blue-600 text-blue-600 cursor-pointer uppercase text-sm font-bold hover:bg-blue-500 hover:text-white hover:shadow"
-        @click="$store.state.activeTab--"
-        v-show="$store.state.activeTab > 0"
-      >
-        Back
-      </button>
-      <button
-        class="py-2 px-4 border rounded-md border-blue-600 text-blue-600 cursor-pointer uppercase text-sm font-bold hover:bg-blue-500 hover:text-white hover:shadow"
-        @click="$store.state.activeTab++"
-        v-show="$store.state.activeTab < tabs.length - 1"
-      >
-        Next
-      </button>
-    </div>
-    actual component end-->
   </div>
 </template>
 -
 <script>
+import ProfileHeader from './ProfileHeader';
+import DetailsField from "./DetailsField";
+import DetailsLink from "./DetailsLink";
+import Photo from "./Photo.vue";
 import Jumbotron from "./Jumbotron.vue";
 import Socials from "./Socials.vue";
 import TypingAnimation from "./TypingAnimation.vue";
 
 export default {
-  components: { Jumbotron, Socials, TypingAnimation },
+  components: {
+    Jumbotron,
+    Socials,
+    TypingAnimation,
+    Photo,
+    DetailsField,
+    DetailsLink,
+    ProfileHeader
+  },
   data() {
     return {
       tabs: [

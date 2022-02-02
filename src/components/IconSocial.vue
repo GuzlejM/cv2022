@@ -1,6 +1,12 @@
 <template lang="">
   <div>
-    <a :href="this.link"></a><i :class="customClass" class="cursor-pointer"></i>
+    <a :href="this.link" target="_newtab" class="cursor-pointer"
+      ><i
+        :title="this.title"
+        :class="customClass"
+        class="cursor-pointer hover:opacity-50"
+      ></i
+    ></a>
   </div>
 </template>
 <script>
@@ -12,6 +18,11 @@ export default {
       default: "",
     },
     link: {
+      type: String,
+      required: true,
+      default: "",
+    },
+    title: {
       type: String,
       required: true,
       default: "",
