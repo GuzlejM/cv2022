@@ -9,7 +9,7 @@
       </div>
       <!--actual component start-->
       <ul class="flex justify-start items-center py-4">
-        <div v-for="(tab, index) in tabs" :key="index">
+        <div v-for="(tab, index) in tabs" :key="index">target="_newtab"
           <li
             class="cursor-pointer py-2 px-4 text-2xl hover:border-4 hover:border-black"
             @click="$store.state.activeTab = index"
@@ -41,7 +41,7 @@
         />
         <!-- PHOTO PART -->
 
-        <Photo class="p-4 z-20" />
+        <Photo class="p-4 z-20 w-2/6" />
         <!-- DETAILS -->
 
         <div class="flex flex-col justify-between h-full py-5 w-4/6 pr-2">
